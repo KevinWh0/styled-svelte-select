@@ -709,7 +709,9 @@
                             class:group-item={item.groupItem}
                             class:not-selectable={item?.selectable === false}>
                             <slot name="item" {item} index={i}>
-                                {item?.[label]}
+                                <div class="text-red-500">{item?.[label].split(" ").shift()}</div>
+                                
+                                <div>{item?.[label].split(" ").slice(1).join(" ")}</div>
                             </slot>
                         </div>
                     </div>
